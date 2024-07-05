@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Playground</title>
+  <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .flexbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ddd;
+      color: #333;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+    .flexbox:hover {
+      background-color: #eee;
+    }
+
+    /* Controller Styles */
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      background-color: #eee;
+    }
+    .control-label {
+      margin-right: 10px;
+    }
+    #justify-select {
+      width: 100px;
+    }
+    #text-align-select {
+      width: 120px;
+    }
+    #font-size, #font-weight, #padding, #margin, #text-padding, #text-margin {
+      width: 50px;
+    }
+    #color-pickers input[type="color"] {
+      width: 50px;
+      height: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Flexbox Playground</h1>
+  <h2>Get Groovy with Styles</h2>
+  <div class="container">
+    <?php // Yes, that's right, PHP for loop! Can also use JS ?>
+    <?php for ($i = 1; $i <= 70; $i++): ?>
+      <div class="flexbox">Example Text <?= $i ?></div>
+    <?php endfor; ?>
+  </div>
+  <div class="controls">
+    <div class="control-label">Justification:</div>
+    <select id="justify-select">
+      <option value="flex-start">Start</option>
+      <option value="center" selected>Center</option>
+      <option value="flex-end">End</option>
+      <option value="space-between">Space Between</option>
+      <option value="space-around">Space Around</option>
+    </select>
+    <div class="control-label">Text Align:</div>
+    <select id="text-align-select">
+      <option value="left">Left</option>
+      <option value="center" selected>Center</option>
+      <option value="right">Right</option>
+    </select>
+    <div class="control-label">Font Size:</div>
+    <input type="number" id="font-size" value="16">
+    <div class="control-label">Font Weight:</div>
+    <input type="number" id="font-weight" value="400">
+    <div class="control-label">Colors:</div>
+    <div id="color-pickers">
+      <span>Text:</span>
+      <input type="color" id="text-color">
+      <span>Outline:</span>
+      <input type="color" id="outline-color">
+      <span>Background:</span>
+      <input type="color" id="background-color">
+    </div>
+    <div class="control-label">Padding:</div>
+    <input type="number" id="padding" value="10">
+    <div class="control-label">Margin:</div>
+    
