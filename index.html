@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flexbox Playground</title>
+  <title>Flexbox Playground (Static)</title>
   <style>
     /* Base styles */
     body {
@@ -34,73 +34,84 @@
       font-size: 16px;
       transition: all 0.2s ease;
     }
+    .flexbox.active {
+      border-color: #007bff;
+    }
     .flexbox:hover {
       background-color: #eee;
     }
 
-    /* Controller Styles */
-    .controls {
-      display: flex;
+    /* Preset Styles (replace with your desired defaults) */
+    .container {
+      justify-content: center;
+    }
+    .flexbox {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      color: #333;
+      background-color: #fff;
+      outline: none;
+    }
+
+    /* Demo Styles (applied on hover) */
+    .flexbox:hover.justify-start {
+      justify-content: flex-start;
+    }
+    .flexbox:hover.justify-center {
+      justify-content: center;
+    }
+    .flexbox:hover.justify-end {
+      justify-content: flex-end;
+    }
+    .flexbox:hover.justify-space-between {
+      justify-content: space-between;
+    }
+    .flexbox:hover.justify-space-around {
       justify-content: space-around;
-      padding: 10px;
-      background-color: #eee;
     }
-    .control-label {
-      margin-right: 10px;
+    .flexbox:hover.text-left {
+      text-align: left;
     }
-    #justify-select {
-      width: 100px;
+    .flexbox:hover.text-center {
+      text-align: center;
     }
-    #text-align-select {
-      width: 120px;
+    .flexbox:hover.text-right {
+      text-align: right;
     }
-    #font-size, #font-weight, #padding, #margin, #text-padding, #text-margin {
-      width: 50px;
+    .flexbox:hover.font-size-14 {
+      font-size: 14px;
     }
-    #color-pickers input[type="color"] {
-      width: 50px;
-      height: 25px;
+    .flexbox:hover.font-size-18 {
+      font-size: 18px;
+    }
+    .flexbox:hover.font-weight-bold {
+      font-weight: bold;
+    }
+    .flexbox:hover.font-weight-normal {
+      font-weight: normal;
+    }
+    .flexbox:hover.color-blue {
+      color: blue;
+    }
+    .flexbox:hover.color-red {
+      color: red;
+    }
+    .flexbox:hover.background-gray {
+      background-color: #ddd;
+    }
+    .flexbox:hover.background-yellow {
+      background-color: yellow;
     }
   </style>
 </head>
 <body>
   <h1>Flexbox Playground</h1>
-  <h2>Get Groovy with Styles</h2>
+  <h2>Customize the Look (Hover for Options)</h2>
   <div class="container">
-    <?php // Yes, that's right, PHP for loop! Can also use JS ?>
     <?php for ($i = 1; $i <= 70; $i++): ?>
       <div class="flexbox">Example Text <?= $i ?></div>
     <?php endfor; ?>
   </div>
-  <div class="controls">
-    <div class="control-label">Justification:</div>
-    <select id="justify-select">
-      <option value="flex-start">Start</option>
-      <option value="center" selected>Center</option>
-      <option value="flex-end">End</option>
-      <option value="space-between">Space Between</option>
-      <option value="space-around">Space Around</option>
-    </select>
-    <div class="control-label">Text Align:</div>
-    <select id="text-align-select">
-      <option value="left">Left</option>
-      <option value="center" selected>Center</option>
-      <option value="right">Right</option>
-    </select>
-    <div class="control-label">Font Size:</div>
-    <input type="number" id="font-size" value="16">
-    <div class="control-label">Font Weight:</div>
-    <input type="number" id="font-weight" value="400">
-    <div class="control-label">Colors:</div>
-    <div id="color-pickers">
-      <span>Text:</span>
-      <input type="color" id="text-color">
-      <span>Outline:</span>
-      <input type="color" id="outline-color">
-      <span>Background:</span>
-      <input type="color" id="background-color">
-    </div>
-    <div class="control-label">Padding:</div>
-    <input type="number" id="padding" value="10">
-    <div class="control-label">Margin:</div>
-    
+</body>
+</html>
